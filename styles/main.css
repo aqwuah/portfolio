@@ -35,20 +35,20 @@ a{
   color: rgb(238, 238, 238);
 }
 body{
-  background-color:#393A59;
+  background-color:#25729b;
 
   height: 100vh;
   font-family: 'Fira Code', monospace;
-  display:flex;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
 .container{
-  display:flex;
+  display: flex;
   flex-direction: column;
-  width:100%;
-  max-width:800px;
-  height:500px;
+  width: 100%;
+  max-width: 900px;
+  height: 600px;
   overflow: hidden;
   border-radius: 6px;
   border: 1px solid gray;
@@ -84,7 +84,6 @@ div.title{
 .menu h1{
   font-size:13px;
   color:#9c9c9c;
-
 }
 .buttons-flex{
   position: absolute;
@@ -94,31 +93,31 @@ div.title{
 @media (max-width:500px){
   .buttons-flex{
     position: unset;
-    display:flex;
+    display: flex;
     flex-direction: row;
   }
 }
 @media (max-width:330px){
   .menu h1{
-    display:none;
+    display: none;
   }
 }
 #app{
-  display:flex;
+  display: flex;
   flex-direction: column;
   background-color:#282A35;
-  width:100%;
-  height:100%;
-  padding:8px;
+  width: 100%;
+  height: 100%;
+  padding: 8px;
   overflow: auto;
 }
 p{
-  font-size:16px;
+  font-size: 16px;
   color:rgb(238, 238, 238);
-  padding:8px 0;
+  padding: 8px 0;
 }
 h2{
-  font-size:16px;
+  font-size: 16px;
   color:rgb(238, 238, 238);
 }
 p.code{
@@ -126,7 +125,7 @@ p.code{
   margin-left:8px;
 }
 span.text{
-  margin-left:16px;
+  margin-left: 16px;
   color:white;
 }
 p.path{
@@ -139,46 +138,50 @@ p.path span + span{
   color:#9CEAF3;
 }
 
-.sucess{
+.success{
   color:#5AD786;
 }
 .error{
   color:#F78F85;
+}
+.nothing{
+  color:#babcbc;
 }
 p.response{
   color:rgb(238, 238, 238);
 }
 
 input{
-  border:none;
+  border: none;
   background-color: unset;
   color:rgb(238, 238, 238);
-  width:100%;
-  font-size:16px;
+  width: 100%;
+  font-size: 16px;
   font-family: 'Fira Code', monospace;
 }
 input:focus{
-  border:none;
+  border: none;
   outline: none;
   box-shadow: none;
   background-color: unset;
-  
 }
 .type{
-  display:flex;
+  display: flex;
   align-items: center;
   padding:8px 0;
 }
 .type2{
-  display:flex;
+  display: flex;
   align-items: center;
   padding:8px 0;
 }
-.icone{
-  color:#5AD786;
-  padding-right:8px;
+.icon{
+  color:#ffffff;
+  padding-right: 8px;
 }
-
-.icone.error{
+.icon.success{
+  color:#5AD786
+}
+.icon.error{
   color:#F78F85;
 }
