@@ -53,6 +53,11 @@ body{
   position: absolute;
   visibility: hidden;
 }
+.explosion{
+  color: #fff;
+  position: absolute;
+  visibility: hidden;
+}
 .container{
   visibility: visible;
   display: flex;

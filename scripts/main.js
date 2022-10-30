@@ -5,12 +5,10 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
 app.addEventListener("keypress", async function(event){
   if(event.key === "Enter")
   {
-//  await delay(150);
-    getInputValue();
-   
-    removeInput();
-//  await delay(150);
-    new_line();
+    getInputValue(); 
+    
+    removeInput(); 
+    new_line(); 
   }
 });
 
@@ -37,12 +35,22 @@ async function open_terminal() // sends opening lines of text
   new_line();
 }
 
-function close_terminal() // removes the terminal 
+function close_terminal() // removes the terminal by clicking button
 {
   var container = document.getElementsByClassName("container")[0]
   container.style.visibility = "hidden";
   var credit = document.getElementsByClassName("credit")[0]
   credit.style.visibility = "visible";
+}
+
+function destroy_terminal() // removes the terminal by running sudo rm -rf
+{
+  var container = document.getElementsByClassName("container")[0]
+  container.style.visibility = "hidden";
+  var credit = document.getElementsByClassName("credit")[0]
+  credit.style.visibility = "hidden";
+  var explosion = document.getElementsByClassName("explosion")[0]
+  explosion.style.visibility = "visible";
 }
 
 function minimise_terminal() // hides the terminal but allows it to be reopened
@@ -182,11 +190,8 @@ async function getInputValue() // check what the user typed and show output
     falseValue(value);
     createText("I WARNED YOU.")
     createText("SELF DESTRUCTING IN 3... 2... 1...")
-    explosion_art();
     await delay(4000)
-    close_terminal();
-    await delay(2000);
-    destroyed_alert();
+    destroy_terminal();
   }
 
   else if (value === "easter egg")
@@ -211,18 +216,6 @@ async function getInputValue() // check what the user typed and show output
     falseValue(value);
     createText(`command not found: ${value}`)
   }
-}
-
-function explosion_art() // shows the explosion ascii art
-{
-  createText("<pre>          _ ._  _ , _ ._</pre>")
-  createText("<pre>        (_ ' ( `  )_  .__)</pre>")
-  createText("<pre>      ( (  (    )   `)  ) _)</pre>")
-  createText("<pre>     (__ (_   (_ . _) _) ,__)</pre>")
-  createText("<pre>         `~~`\\ ' . /`~~`</pre>")
-  createText("<pre>              ;   ;</pre>")
-  createText("<pre>              /   \\</pre>")
-  createText("<pre>_____________/_ __ \_____________</pre>")
 }
 
 function destroyed_alert()
