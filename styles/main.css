@@ -3,22 +3,19 @@
   padding:0;
   box-sizing: border-box;
 }
-::-webkit-scrollbar-track
-{
+::-webkit-scrollbar-track{
     box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
 	
 	background-color: #555;
 }
 
-::-webkit-scrollbar
-{
+::-webkit-scrollbar{
 	width: 12px;
 	background-color: #555;
 }
 
-::-webkit-scrollbar-thumb
-{
+::-webkit-scrollbar-thumb{
   border-radius: 10px;
   box-shadow: inset 0 0 6px rgba(0,0,0,.3);
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
@@ -30,10 +27,12 @@
 .blue{
   color:#9CEAF3;
 }
+
 a{
   text-decoration: none;
   color: rgb(238, 238, 238);
 }
+
 body{
   background-color:#25729b;
 
@@ -43,40 +42,51 @@ body{
   align-items: center;
   justify-content: center;
 }
+.credit{
+  color: #fff;
+  position: absolute;
+  visibility: hidden;
+  text-align: center;
+}
+.exe{
+  color: #fff;
+  position: absolute;
+  visibility: hidden;
+}
 .container{
+  visibility: visible;
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 900px;
   height: 600px;
   overflow: hidden;
-  border-radius: 6px;
-  border: 1px solid gray;
-  margin:20px;
   cursor: text;
 }
 .menu{
   display:flex;
   align-items: center;
-
   text-align: center;
   flex-direction: row;
   width: 100%;
   height: 24px;
   background-color: #424040;
   padding: 0 8px;
-  cursor:default;
+  cursor: default;
 }
 .menu .button{
-  width:12px;
-  height:12px;
-  border-radius:50%;
-  margin-right:8px;
-  cursor:pointer;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 8px;
+  cursor: pointer;
 }
+.button:active {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  }
 .red{background-color:#F5544D;}
 .yellow{background-color:#FABD2F;}
 .green{background-color:#47D043;}
+
 div.title{
   flex:1;
   text-align:center;
@@ -87,9 +97,10 @@ div.title{
 }
 .buttons-flex{
   position: absolute;
-  display:flex;
+  display: flex;
   flex-direction: row;
 }
+
 @media (max-width:500px){
   .buttons-flex{
     position: unset;
@@ -102,6 +113,7 @@ div.title{
     display: none;
   }
 }
+
 #app{
   display: flex;
   flex-direction: column;
@@ -111,41 +123,54 @@ div.title{
   padding: 8px;
   overflow: auto;
 }
+
 p{
   font-size: 16px;
   color:rgb(238, 238, 238);
   padding: 8px 0;
 }
+
 h2{
   font-size: 16px;
   color:rgb(238, 238, 238);
 }
+
 p.code{
   color:#66C2CD;
   margin-left:8px;
 }
+
 span.text{
   margin-left: 16px;
   color:white;
 }
+
 p.path{
   color:#F7FCA0;
 }
+
 p.path span{
   color:#6A77D2;
 }
+
 p.path span + span{
   color:#9CEAF3;
 }
 
 .success{
-  color:#5AD786;
+  color:#47D043;
 }
 .error{
-  color:#F78F85;
+  color:#F5544D;
 }
 .nothing{
   color:#babcbc;
+}
+.mid{
+  color: #FABD2F;
+}
+.egg{
+  color: #66C2CD;
 }
 p.response{
   color:rgb(238, 238, 238);
@@ -180,8 +205,14 @@ input:focus{
   padding-right: 8px;
 }
 .icon.success{
-  color:#5AD786
+  color:#47D043
 }
 .icon.error{
-  color:#F78F85;
+  color:#F5544D;
+}
+.icon.mid{
+  color:#FABD2F;
+}
+.icon.egg{
+  color: #66C2CD;
 }

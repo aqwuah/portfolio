@@ -37,33 +37,30 @@ async function open_terminal() // sends opening lines of text
   new_line();
 }
 
-async function close_terminal() // removes the terminal from the screen
+function close_terminal() // removes the terminal 
 {
-  document.querySelectorAll("p").forEach(e => e.parentNode.removeChild(e));
-  await delay(50);
-  document.querySelectorAll("section").forEach(e => e.parentNode.removeChild(e));
-  await delay(50);
-  document.querySelectorAll("span1").forEach(e => e.parentNode.removeChild(e));
-  await delay(50);
-  document.querySelectorAll("span2").forEach(e => e.parentNode.removeChild(e));
-  await delay(50);
-  document.querySelectorAll("div").forEach(e => e.parentNode.removeChild(e));
-  await delay(50);
-  document.querySelectorAll("i").forEach(e => e.parentNode.removeChild(e));
-  await delay(50);
-  document.querySelectorAll("input").forEach(e => e.parentNode.removeChild(e));
+  var container = document.getElementsByClassName("container")[0]
+  container.style.visibility = "hidden";
+  var credit = document.getElementsByClassName("credit")[0]
+  credit.style.visibility = "visible";
 }
 
-function explosion_art() // shows the explosion ascii art
+function minimise_terminal() // hides the terminal but allows it to be reopened
 {
-  createText("<pre>          _ ._  _ , _ ._</pre>")
-  createText("<pre>        (_ ' ( `  )_  .__)</pre>")
-  createText("<pre>      ( (  (    )   `)  ) _)</pre>")
-  createText("<pre>     (__ (_   (_ . _) _) ,__)</pre>")
-  createText("<pre>         `~~`\\ ' . /`~~`</pre>")
-  createText("<pre>              ;   ;</pre>")
-  createText("<pre>              /   \\</pre>")
-  createText("<pre>_____________/_ __ \_____________</pre>")
+  var container = document.getElementsByClassName("container")[0]
+  container.style.visibility = "hidden";
+  var exe = document.getElementsByClassName("exe")[0]
+  exe.style.visibility = "visible"
+}
+
+function maximise_terminal() // shows the terminal again with the same content
+{
+  var container = document.getElementsByClassName("container")[0]
+  container.style.visibility = "visible";
+  var credit = document.getElementsByClassName("credit")[0]
+  credit.style.visibility = "hidden";
+  var exe = document.getElementsByClassName("exe")[0]
+  exe.style.visibility = "hidden"
 }
 
 function new_line() // creates a new line with info and a pointer (>), and focuses the mouse on the terminal
@@ -87,7 +84,6 @@ function new_line() // creates a new line with info and a pointer (>), and focus
   div.appendChild(input);
   app.appendChild(div);
   input.focus();
-  
 }
 
 function removeInput() // removes what the user typed and replaces it with the coloured command (stripped and lowercase)
@@ -171,13 +167,13 @@ async function getInputValue() // check what the user typed and show output
 
   else if (value === "social") // for if user forgets the -a / --all
   {
-    trueValue(value);
+    midValue(value);
     createText("Didn't you mean: social -a/--all?")
   }
 
   else if (value === "social -a/--all" || value === "social -a --all" || value === "social --all -a") // for if user does both -a and --all
   {
-    trueValue(value);
+    midValue(value);
     createText("You can use either -a or --all, not both!")
   }
 
@@ -191,6 +187,12 @@ async function getInputValue() // check what the user typed and show output
     close_terminal();
     await delay(2000);
     destroyed_alert();
+  }
+
+  else if (value === "easter egg")
+  {
+    eggValue(value);
+    createText("hello there.")
   }
   
   else if (value === "clear") // removing all previous text
@@ -209,6 +211,18 @@ async function getInputValue() // check what the user typed and show output
     falseValue(value);
     createText(`command not found: ${value}`)
   }
+}
+
+function explosion_art() // shows the explosion ascii art
+{
+  createText("<pre>          _ ._  _ , _ ._</pre>")
+  createText("<pre>        (_ ' ( `  )_  .__)</pre>")
+  createText("<pre>      ( (  (    )   `)  ) _)</pre>")
+  createText("<pre>     (__ (_   (_ . _) _) ,__)</pre>")
+  createText("<pre>         `~~`\\ ' . /`~~`</pre>")
+  createText("<pre>              ;   ;</pre>")
+  createText("<pre>              /   \\</pre>")
+  createText("<pre>_____________/_ __ \_____________</pre>")
 }
 
 function destroyed_alert()
@@ -244,6 +258,34 @@ function falseValue(value) // makes the pointer red
   app.appendChild(div);
 }
 
+function midValue(value) // makes the pointer yellow
+{  
+  const div = document.createElement("section");
+  div.setAttribute("class", "type2")
+  const i = document.createElement("i");
+  i.setAttribute("class", "fas fa-angle-right icon mid")
+  const mensagem = document.createElement("h2");
+  mensagem.setAttribute("class", "mid")
+  mensagem.textContent = `${value}`;
+  div.appendChild(i);
+  div.appendChild(mensagem);
+  app.appendChild(div);
+}
+
+function eggValue(value) // makes the pointer aqua
+{  
+  const div = document.createElement("section");
+  div.setAttribute("class", "type2")
+  const i = document.createElement("i");
+  i.setAttribute("class", "fas fa-angle-right icon egg")
+  const mensagem = document.createElement("h2");
+  mensagem.setAttribute("class", "egg")
+  mensagem.textContent = `${value}`;
+  div.appendChild(i);
+  div.appendChild(mensagem);
+  app.appendChild(div);
+}
+
 function createText(text, classname) // adds some text to the terminal
 {
   const p = document.createElement("p");
@@ -258,6 +300,25 @@ function createCommand(command, description) // creates an overview of a command
   p.setAttribute("class", "code");
   p.innerHTML = `${command} <br/><span class='text'> ${description} </span>`;
   app.appendChild(p);
+}
+
+function change_window_size() // make terminal the size of the screen or reset
+{
+  var element = document.querySelector('.container').style
+  if (element.maxWidth)
+  {
+    element.height = "100%";
+    element.removeProperty('max-width');
+    element.removeProperty('margin');
+    element.removeProperty('border-radius')
+  }
+  else
+  {
+    element.height = "600px";
+    element.setProperty('max-width', '900px')
+    element.setProperty('margin', '20px')
+    element.setProperty('border-radius', '6px')
+  }
 }
 
 open_terminal();

@@ -7,15 +7,17 @@
    rel="stylesheet">
   <link href="styles/all.css" rel="stylesheet">
   <link rel="stylesheet" href="styles/main.css">
-  <title>Aqwuah Portfolio</title>
+  <title>aqwuah</title>
 </head>
 <body>
-  <div class="container">
+  <div class="credit">made with &lt;3 by aqua</div>
+  <div class="exe" onclick="maximise_terminal()"><u>terminal.exe</u></div>
+  <div class="container" style="max-width:900px; margin:20px; border-radius:6px;">
     <div class="menu">
       <div class="buttons-flex">
-      <div class="button red"></div>
-      <div class="button yellow"></div>
-      <div class="button green"></div>
+      <div class="button red" onclick="close_terminal()"></div>
+      <div class="button yellow" onclick="minimise_terminal()"></div> 
+      <div class="button green" onclick="change_window_size()"></div>
     </div>
     <div class="title">
       <a href="https://github.com/aqwuah" target="_blank"><h1><i class='fab fa-github'></i> github.com/aqwuah</h1></a>
@@ -24,7 +26,6 @@
     <div id="app">
     </div>
   </div>
-
-  <script src="scripts/main.js"></script>  
+  <script src="scripts/main.js"></script>
 </body>
 </html>
