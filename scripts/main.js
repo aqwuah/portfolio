@@ -118,7 +118,7 @@ async function getInputValue() // check what the user typed and show output
   {
     trueValue(value);
     createText("project source code can be seen at <a href='https://github.com/aqwuah' target='_blank'><i class='fab fa-github white'></i> github.com/aqwuah</a>")
-    createText("click / hover the project for more info (if available)")
+    createText("<a onclick='clicked_alert()'><u>click</u></a> / <abbr title='good hover(ing)?'>hover</abbr> the project for more info (if available)")
     createText("--- discord bots ---")
     createText("<abbr title='unreleased'>aquo</abbr> - multipurpose discord bot")
     createText("<a href='https://discord.gg/competitive'><u>rcl utility</u></a> - role management system for .gg/competitive (5.9k users)")
@@ -220,8 +220,14 @@ async function getInputValue() // check what the user typed and show output
 
 function destroyed_alert()
 {
-  alert("The website has been destroyed. Don't say I didn't warn you.")
+  alert("the website has been destroyed. don't say i didn't warn you.")
 }
+
+function clicked_alert()
+{
+  alert("well clicked")
+}
+
 
 function trueValue(value) // makes the pointer green
 {
