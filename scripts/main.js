@@ -125,7 +125,7 @@ async function getInputValue() // check what the user typed and show output
     createText("<a href='https://discord.com/api/oauth2/authorize?client_id=982461488381976676&permissions=412518574144&scope=bot'><u>wooly</u></a> - hypixel woolwars stats bot (1.6k users)")
     createText("<abbr title='private bot'>srb</abbr> - general management bot")
     createText("--- websites ---")
-    createText("<a href='https://aqwuah.com'><u>portfolio</u></a> - this!")
+    createText("<a href='https://github.com/aqwuah/portfolio'><u>portfolio</u></a> - this!")
     createText("<a href='https://github.com/aqwuah/aquobin'><u>aquobin</u></a> - simple pastebin made using faunadb")
     createText("<a href='https://github.com/aqwuah/url-shortener'><u>url shortener</u></a> - simple pastebin made using faunadb")
     createText("<abbr title='private'>aquoogle</abbr> - personal search engine with no tracking")
