@@ -131,6 +131,8 @@ async function getInputValue() // check what the user typed and show output
     createText("<abbr title='private'>aquoogle</abbr> - personal search engine with no tracking")
     createText("--- games ---")
     createText("<a href='https://runner.aqwuah.com'><u>runner</u></a> - unoriginal (not endless) runner i made in like 5 mins using unity")
+    createText("<a href='https://frst.aqwuah.com'><u>frst</u></a> - gem collecting game set in a 3D forest surrounded by mountains")
+    createText("<a href='https://pewpew.aqwuah.com'><u>pewpew</u></a> - 2D shooter / platformer with npc mechanics and a dialogue system")
   }
 
   else if (value === "about me")
