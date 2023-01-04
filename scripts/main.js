@@ -122,7 +122,7 @@ async function getInputValue() // check what the user typed and show output
     createText("--- discord bots ---")
     createText("<abbr title='unreleased'>aquo</abbr> - multipurpose discord bot")
     createText("<a href='https://discord.gg/competitive'><u>rcl utility</u></a> - role management system for .gg/competitive (5.9k users)")
-    createText("<a href='https://discord.com/api/oauth2/authorize?client_id=982461488381976676&permissions=412518574144&scope=bot'><u>wooly</u></a> - hypixel woolwars stats bot (1.6k users)")
+    createText("<abbr title='no longer in service'>wooly</abbr> - hypixel woolwars stats bot (1.6k users)")
     createText("<abbr title='private bot'>srb</abbr> - general management bot")
     createText("--- websites ---")
     createText("<a href='https://github.com/aqwuah/portfolio'><u>portfolio</u></a> - this!")
